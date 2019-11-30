@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def mat_mul(mat1, mat2):
     """Multiply mat1 and mat2 in that order"""
     if len(mat1[0]) != len(mat2):
@@ -13,5 +14,3 @@ def mat_mul(mat1, mat2):
             new_row.append(dot)
         new_mat.append(new_row)
     return new_mat
-
-            
