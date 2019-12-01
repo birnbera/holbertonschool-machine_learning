@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Peform element-wise addition across multiple dimensions"""
 
 
 def add_matrices2D(mat1, mat2):

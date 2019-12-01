@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Peform matrix muliplication on list-based matrices"""
 
 
 def mat_mul(mat1, mat2):

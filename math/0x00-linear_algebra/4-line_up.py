@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Perform element-wise addition"""
 
 
 def add_arrays(arr1, arr2):

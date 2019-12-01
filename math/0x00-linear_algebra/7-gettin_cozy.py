@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Peform matix concatenation along a specified axis"""
 
 
 def cat_matrices2D(mat1, mat2, axis=0):
