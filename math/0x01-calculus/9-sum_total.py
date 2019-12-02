@@ -6,4 +6,9 @@ def summation_i_squared(n):
     """Calculate sum of squares up to n"""
     if n < 1 or n != int(n):
         return None
-    return sum(i**2 for i in range(int(n)+1))
+    if n == 1:
+        return 1
+    n2 = summation_i_squared(n-1)
+    if n2 is None:
+        return None
+    return n*n + n2
