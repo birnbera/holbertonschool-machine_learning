@@ -6,6 +6,4 @@ def summation_i_squared(n):
     """Calculate sum of squares up to n"""
     if not isinstance(n, (int, float)) or n != int(n) or n < 1:
         return None
-    if n == 1:
-        return 1
-    return n*n + summation_i_squared(n-1)
+    return sum(map(lambda x: x*x, range(1, n+1)))
