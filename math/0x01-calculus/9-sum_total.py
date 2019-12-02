@@ -8,7 +8,4 @@ def summation_i_squared(n):
         return None
     if n == 1:
         return 1
-    n2 = summation_i_squared(n-1)
-    if n2 is None:
-        return None
-    return n*n + n2
+    return n*n + summation_i_squared(n-1)
