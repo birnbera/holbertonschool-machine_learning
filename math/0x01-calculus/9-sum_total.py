@@ -4,7 +4,7 @@
 
 def summation_i_squared(n):
     """Calculate sum of squares up to n"""
-    if n < 1 or n != int(n):
+    if not isinstance(n, (int, float)) or n != int(n) or n < 1:
         return None
     if n == 1:
         return 1
