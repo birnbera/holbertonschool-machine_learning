@@ -4,7 +4,7 @@
 
 def poly_derivative(poly):
     """Calculate the derivate of vector poly"""
-    if not poly:
+    if poly == [] or any(not isinstance(coef, (int, float)) for coef in poly):
         return None
     if len(poly) == 1:
         return [0]
