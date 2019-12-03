@@ -8,4 +8,5 @@ def poly_integral(poly, C=0):
        or not all(isinstance(coef, (float, int)) for coef in poly) \
        or not isinstance(C, (float, int)):
         return None
-    return [C] + [coef/i for i, coef in enumerate(poly, 1)]
+    integral = [C] + [coef/i for i, coef in enumerate(poly, 1)]
+    return [int(coef) if coef == int(coef) else coef for coef in integral]
