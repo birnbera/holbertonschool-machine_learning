@@ -4,9 +4,8 @@
 
 def poly_integral(poly, C=0):
     """Integrate poly with constant factor C"""
-    if not poly \
-       or not all(type(coef) in (float, int) for coef in poly) \
-       or not type(C) == int:
+    if not all(type(c) in (float, int) for c in poly) or type(C) != int:
         return None
-    integral = [coef/i for i, coef in enumerate(poly, 1)]
-    return [C] + [int(coef) if coef == int(coef) else coef for coef in integral]
+    if len(poly) == 0 and C == 0:
+        return []
+    return [C] + [c/i if c % i != 0 else c//i for i, c in enumerate(poly, 1)]
