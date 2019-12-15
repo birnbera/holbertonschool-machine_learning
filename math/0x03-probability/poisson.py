@@ -26,3 +26,10 @@ class Poisson:
         for i in range(1, k+1):
             k_fac *= i
         return (self.lambtha**k * e**-self.lambtha)/k_fac
+
+    def cdf(self, k):
+        """Compute CDF at k"""
+        k = int(k)
+        if k < 0:
+            return 0
+        return sum(self.pmf(i) for i in range(k+1))
