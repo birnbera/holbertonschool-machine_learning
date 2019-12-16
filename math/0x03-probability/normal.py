@@ -37,3 +37,7 @@ class Normal:
     def pdf(self, x):
         """Calculate the pdf at x"""
         return 1/(self.stddev * (2*π)**0.5) * e**(-1/2 * self.z_score(x)**2)
+
+    def cdf(self, x):
+        """Calculate the cdf at x"""
+        return 0.5*(1 + erf(self.z_score(x)/2**0.5))
