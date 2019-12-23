@@ -12,7 +12,7 @@ class Binomial:
                 self.n = int(n)
                 assert n > 0
             except (TypeError, AssertionError):
-                raise ValueError('n must be a positive integer')
+                raise ValueError('n must be a positive value')
             try:
                 self.p = float(p)
                 assert 0 < self.p < 1
