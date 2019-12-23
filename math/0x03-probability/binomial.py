@@ -2,6 +2,17 @@
 """Module to represent binomial distribution"""
 
 
+def n_choose_k(n, k):
+    """Calculate the number of k combinations drawn from n elements"""
+    n_fac_minus_k_fac = 1
+    for i in range(k+1, n+1):
+        n_fac_minus_k_fac *= i
+    n_minus_k_fac = 1
+    for i in range(1, n - k + 1):
+        n_minus_k_fac *= i
+    return n_fac_minus_k_fac // n_minus_k_fac
+
+
 class Binomial:
     """Class to store parameters and methods of the binomial distribution"""
     def __init__(self, data=None, n=1, p=0.5):
@@ -34,3 +45,12 @@ class Binomial:
             p = sum(d/n for d in data)/len(data)
             self.n = n
             self.p = float(p)
+
+    def pmf(self, k):
+        """Calculate value of pmf at k"""
+        try:
+            k = int(k)
+            assert 0 <= k <= self.n
+        except (TypeError, AssertionError):
+            return 0
+        return n_choose_k(self.n, k) * self.p**k * (1-self.p)**(self.n-k)
