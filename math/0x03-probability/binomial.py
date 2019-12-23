@@ -5,7 +5,7 @@
 class Binomial:
     """Class to store parameters and methods of the binomial distribution"""
     def __init__(self, data=None, n=1, p=0.5):
-        """Initialize binomial distribution from data or set parameters 
+        """Initialize binomial distribution from data or set parameters
         using n and p."""
         if data is None:
             try:
